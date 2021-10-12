@@ -1,0 +1,29 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: lchristi <lchristi@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/10/11 11:45:35 by lchristi          #+#    #+#              #
+#    Updated: 2021/10/11 12:11:39 by lchristi         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME = libft.a
+CC = gcc
+FLAGS = -Wall -Wextra -Werror
+SRCS = *.c
+
+gcc:	
+	${CC} ${FLAGS} ${SRCS}	
+
+all:	${NAME}
+
+clean: 
+
+fclean:	clean
+
+re: fclean all 
+
+.PHONY: all clean fclean re
