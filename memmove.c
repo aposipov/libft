@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lchristi <lchristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/12 17:20:38 by lchristi          #+#    #+#             */
-/*   Updated: 2021/10/12 17:51:00 by lchristi         ###   ########.fr       */
+/*   Created: 2021/10/12 12:33:19 by lchristi          #+#    #+#             */
+/*   Updated: 2021/10/12 13:05:00 by lchristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	int	sign;
-	int	num;
+	size_t	i;
 
-	sign = 1;
-	num = 0;
-	while ((*nptr == ' ') || (*nptr == '\t') || (*nptr == '\n') \
-					|| (*nptr == '\v') || (*nptr == '\f') || (*nptr == '\r'))
-		nptr++;
-	if (*nptr == '-')
-		sign = -1;
-	while ((*nptr == '-') || (*nptr == '+'))
-		nptr++;
-	while (*nptr >= '0' && *nptr <= '9')
+	if (src < dest)
+		ft_memcpy(dest, src, n);
+	else
 	{
-		num = (num * 10) + ((int)*nptr - '0');
-		nptr++;
-	}
-	return (num * sign);
+		i = 0;
+		while (i < n)
+		{
+			((char *)dest)[i] = ((char *)src)[i];
+			i++;
+		}
+	}	
+	return (dest);
 }
