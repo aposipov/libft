@@ -6,7 +6,7 @@
 #    By: lchristi <lchristi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/11 11:45:35 by lchristi          #+#    #+#              #
-#    Updated: 2021/10/13 12:29:03 by lchristi         ###   ########.fr        #
+#    Updated: 2021/10/13 21:40:26 by lchristi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,11 +22,15 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c\
 	   ft_memchr.c ft_memcmp.c\
 	   ft_strnstr.c ft_atoi.c\
 	   ft_calloc.c ft_strdup.c\
-	   ft_substr.c
+	   ft_substr.c ft_strjoin.c\
+	   ft_strtrim.c ft_split.c ft_itoa.c\
+	   ft_strmapi.c ft_striteri.c\
+	   ft_putchar_fd.c ft_putstr_fd.c\
+	   ft_putendl_fd.c ft_putnbr_fd.c\
 	   
 OBJ = ${patsubst %.c,%.o,$(SRCS)}
 D_FILES = ${patsubst %.c,%.d,$(SRCS)}
-OPTFLAGS = -O2
+OPTFLAGS = 
 RM = @rm -f
 
 gcc:	
