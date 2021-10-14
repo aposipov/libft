@@ -6,7 +6,7 @@
 #    By: lchristi <lchristi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/11 11:45:35 by lchristi          #+#    #+#              #
-#    Updated: 2021/10/14 17:15:09 by lchristi         ###   ########.fr        #
+#    Updated: 2021/10/14 19:08:57 by lchristi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,10 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c\
 	   ft_putchar_fd.c ft_putstr_fd.c\
 	   ft_putendl_fd.c ft_putnbr_fd.c\
 
-SRCS_BONUS = ft_lstnew.c\
+SRCS_BONUS = ft_lstnew.c ft_lstadd_front.c\
+			 ft_lstsize.c ft_lstlast.c\
+			 ft_lstadd_back.c ft_lstdelone.c\
+			 ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
 OBJ = ${patsubst %.c,%.o,$(SRCS)}
 OBJ_BONUS = ${patsubst %.c,%.o,$(SRCS_BONUS)}
