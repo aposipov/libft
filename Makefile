@@ -6,7 +6,7 @@
 #    By: lchristi <lchristi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/11 11:45:35 by lchristi          #+#    #+#              #
-#    Updated: 2021/10/13 21:40:26 by lchristi         ###   ########.fr        #
+#    Updated: 2021/10/14 17:15:09 by lchristi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,9 +27,12 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c\
 	   ft_strmapi.c ft_striteri.c\
 	   ft_putchar_fd.c ft_putstr_fd.c\
 	   ft_putendl_fd.c ft_putnbr_fd.c\
-	   
+
+SRCS_BONUS = ft_lstnew.c\
+
 OBJ = ${patsubst %.c,%.o,$(SRCS)}
-D_FILES = ${patsubst %.c,%.d,$(SRCS)}
+OBJ_BONUS = ${patsubst %.c,%.o,$(SRCS_BONUS)}
+D_FILES = ${patsubst %.c,%.d,$(SRCS),$(SRCS_BONUS)} 
 OPTFLAGS = 
 RM = @rm -f
 
@@ -38,7 +41,10 @@ gcc:
 
 all:	${NAME}
 
-${NAME}:	${OBJ}
+${NAME}:	${OBJ} ${OBJ_BONUS}
+			ar rcs ${NAME} $?
+
+bonus:		${OBJ_BONUS}
 			ar rcs ${NAME} $?
 
 %.o : %.c
@@ -47,11 +53,11 @@ ${NAME}:	${OBJ}
 include $(wildcard $(D_FILES))
 
 clean:	
-	${RM} ${OBJ} ${D_FILES}	
+	${RM} ${OBJ} ${D_FILES} ${OBJ_BONUS}	
 
 fclean:	clean
 	${RM} ${NAME}
 
-re: fclean all 
+re: fclean all  
 
 .PHONY: all clean fclean re
