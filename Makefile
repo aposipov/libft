@@ -6,13 +6,14 @@
 #    By: lchristi <lchristi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/11 11:45:35 by lchristi          #+#    #+#              #
-#    Updated: 2021/10/20 12:20:12 by lchristi         ###   ########.fr        #
+#    Updated: 2021/10/20 18:47:14 by lchristi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 CC = gcc
 FLAGS = -Wall -Wextra -Werror
+HEADER = libft.h
 SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c\
 	   ft_isascii.c ft_isprint.c\
 	   ft_strlen.c ft_memset.c ft_bzero.c\
@@ -47,7 +48,7 @@ all:	${NAME}
 hello:	
 		@echo "hello world"
 
-${NAME}:	${OBJ} ${OBJ_BONUS}
+${NAME}:	${OBJ} ${HEADER} ${OBJ_BONUS}
 			ar rcs ${NAME} $?
 
 bonus:		${OBJ_BONUS}
