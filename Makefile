@@ -6,7 +6,7 @@
 #    By: lchristi <lchristi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/11 11:45:35 by lchristi          #+#    #+#              #
-#    Updated: 2021/10/14 19:08:57 by lchristi         ###   ########.fr        #
+#    Updated: 2021/10/20 12:20:12 by lchristi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,9 @@ gcc:
 	${CC} ${FLAGS} ${SRCS}	
 
 all:	${NAME}
+
+hello:	
+		@echo "hello world"
 
 ${NAME}:	${OBJ} ${OBJ_BONUS}
 			ar rcs ${NAME} $?
