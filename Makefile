@@ -6,7 +6,7 @@
 #    By: lchristi <lchristi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/11 11:45:35 by lchristi          #+#    #+#              #
-#    Updated: 2021/10/20 18:47:14 by lchristi         ###   ########.fr        #
+#    Updated: 2021/10/21 13:20:35 by lchristi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,10 +48,10 @@ all:	${NAME}
 hello:	
 		@echo "hello world"
 
-${NAME}:	${OBJ} ${HEADER} ${OBJ_BONUS}
+${NAME}:	${OBJ} ${HEADER}
 			ar rcs ${NAME} $?
 
-bonus:		${OBJ_BONUS}
+bonus:		${OBJ} ${HEADER} ${OBJ_BONUS}
 			ar rcs ${NAME} $?
 
 %.o : %.c
