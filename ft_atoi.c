@@ -6,7 +6,7 @@
 /*   By: lchristi <lchristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 17:20:38 by lchristi          #+#    #+#             */
-/*   Updated: 2021/10/12 17:51:00 by lchristi         ###   ########.fr       */
+/*   Updated: 2021/10/25 10:34:55 by lchristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,23 @@
 
 int	ft_atoi(const char *nptr)
 {
-	int	sign;
+	int	i;
+	int	minus;
 	int	num;
 
-	sign = 1;
+	i = 0;
+	minus = 1;
 	num = 0;
-	while ((*nptr == ' ') || (*nptr == '\t') || (*nptr == '\n') \
-					|| (*nptr == '\v') || (*nptr == '\f') || (*nptr == '\r'))
-		nptr++;
-	if (*nptr == '-')
-		sign = -1;
-	while ((*nptr == '-') || (*nptr == '+'))
-		nptr++;
-	while (*nptr >= '0' && *nptr <= '9')
-	{
-		num = (num * 10) + ((int)*nptr - '0');
-		nptr++;
-	}
-	return (num * sign);
+	if (!nptr)
+		return (0);
+	while (nptr[i] == '\t' || nptr[i] == '\n' || nptr[i] == '\v' \
+					|| nptr[i] == '\f' || nptr[i] == '\r' || nptr[i] == ' ')
+		i++;
+	if (nptr[i] == '-')
+		minus = -1;
+	if (nptr[i] == '-' || nptr[i] == '+')
+		i++;
+	while (nptr[i] >= '0' && nptr[i] <= '9')
+		num = (num * 10) + (nptr[i++] - '0');
+	return (num * minus);
 }

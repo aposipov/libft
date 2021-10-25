@@ -6,7 +6,7 @@
 #    By: lchristi <lchristi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/11 11:45:35 by lchristi          #+#    #+#              #
-#    Updated: 2021/10/21 13:20:35 by lchristi         ###   ########.fr        #
+#    Updated: 2021/10/25 10:55:34 by lchristi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,10 @@ gcc:
 	${CC} ${FLAGS} ${SRCS}	
 
 all:	${NAME}
+
+so:
+		${CC} -fPIC ${CFLAGS} ${SRC}
+		gcc -shared -o libft.so ${OBJ}
 
 hello:	
 		@echo "hello world"
