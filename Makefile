@@ -6,7 +6,7 @@
 #    By: lchristi <lchristi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/11 11:45:35 by lchristi          #+#    #+#              #
-#    Updated: 2021/10/25 11:35:18 by lchristi         ###   ########.fr        #
+#    Updated: 2021/10/25 22:41:56 by lchristi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ NAME = libft.a
 CC = gcc
 FLAGS = -Wall -Wextra -Werror
 HEADER = libft.h
+
 SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c\
 	   ft_isascii.c ft_isprint.c\
 	   ft_strlen.c ft_memset.c ft_bzero.c\
@@ -37,38 +38,28 @@ SRCS_BONUS = ft_lstnew.c ft_lstadd_front.c\
 OBJ = ${patsubst %.c,%.o,$(SRCS)}
 OBJ_BONUS = ${patsubst %.c,%.o,$(SRCS_BONUS)}
 D_FILES = ${patsubst %.c,%.d,$(SRCS),$(SRCS_BONUS)} 
-OPTFLAGS = 
+ 
 RM = @rm -f
 
-gcc:	
-	${CC} ${FLAGS} ${SRCS}	
-
-all:	${NAME}
-
-so:
-		${CC} -c -nostartfiles -fPIC ${CFLAGS} ${SRCS}
-		${CC} -nostartfiles -shared -o libft.a ${OBJ}
-
-hello:	
-		@echo "hello world"
+all:		${NAME}
 
 ${NAME}:	${OBJ} ${HEADER}
 			ar rcs ${NAME} $?
 
-bonus:		${OBJ} ${HEADER} ${OBJ_BONUS}
+bonus:		${OBJ_BONUS} ${HEADER}
 			ar rcs ${NAME} $?
 
 %.o : %.c
-			${CC} ${FLAGS} ${OPTFLAGS} -c $< -o $@ -MD
+			${CC} ${FLAGS} -c $< -o $@ -MD
 
 include $(wildcard $(D_FILES))
 
 clean:	
-	${RM} ${OBJ} ${D_FILES} ${OBJ_BONUS}	
+			${RM} ${OBJ} ${D_FILES} ${OBJ_BONUS}	
 
 fclean:	clean
-	${RM} ${NAME}
+			${RM} ${NAME}
 
 re: fclean all  
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
