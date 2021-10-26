@@ -6,7 +6,7 @@
 #    By: lchristi <lchristi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/11 11:45:35 by lchristi          #+#    #+#              #
-#    Updated: 2021/10/25 22:41:56 by lchristi         ###   ########.fr        #
+#    Updated: 2021/10/26 20:07:36 by lchristi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,10 +30,11 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c\
 	   ft_putchar_fd.c ft_putstr_fd.c\
 	   ft_putendl_fd.c ft_putnbr_fd.c\
 
-SRCS_BONUS = ft_lstnew.c ft_lstadd_front.c\
-			 ft_lstsize.c ft_lstlast.c\
-			 ft_lstadd_back.c ft_lstdelone.c\
-			 ft_lstclear.c ft_lstiter.c ft_lstmap.c
+SRCS_BONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c\
+			 ft_lstsize_bonus.c ft_lstlast_bonus.c\
+			 ft_lstadd_back_bonus.c ft_lstdelone_bonus.c\
+			 ft_lstclear_bonus.c ft_lstiter_bonus.c\
+			 ft_lstmap_bonus.c\
 
 OBJ = ${patsubst %.c,%.o,$(SRCS)}
 OBJ_BONUS = ${patsubst %.c,%.o,$(SRCS_BONUS)}
@@ -50,9 +51,9 @@ bonus:		${OBJ_BONUS} ${HEADER}
 			ar rcs ${NAME} $?
 
 %.o : %.c
-			${CC} ${FLAGS} -c $< -o $@ -MD
+			@${CC} ${FLAGS} -c $< -o $@ -MD
 
-include $(wildcard $(D_FILES))
+include ${wildcard ${D_FILES}}
 
 clean:	
 			${RM} ${OBJ} ${D_FILES} ${OBJ_BONUS}	

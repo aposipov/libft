@@ -6,14 +6,14 @@
 /*   By: lchristi <lchristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 12:19:54 by lchristi          #+#    #+#             */
-/*   Updated: 2021/10/21 17:17:07 by lchristi         ###   ########.fr       */
+/*   Updated: 2021/10/26 17:18:44 by lchristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
-#include <string.h>
+/*isalpha; isdigit; isalnum; isascii; isprint */
+
+#include "../libft.h"
 #include <stdio.h>
-#include "libft.h"
 
 int	main()
 {
@@ -21,41 +21,27 @@ int	main()
 	int	var2 = '2';
 	int	var3 = '\t';
 	int	var4 = ' ';
+	int var5 = '!';
    	
-	printf("#ft_isalpha#\n");
-	if (ft_isalpha(var1))
-		printf("%c\n", var1);
+	if (ft_isprint(var1))
+		printf("var1(a) = %c\n", var1);
 		else
 			printf("false\n");
-	if (ft_isalpha(var2))
-		printf("%c\n", var2);
+	if (ft_isprint(var2))
+		printf("var2(2) = %c\n", var2);
 		else 
 			printf("false\n");
-	if (ft_isalpha(var3))
-		printf("%c\n", var3);
+	if (ft_isprint(var3))
+		printf("var3(tab) = %c\n", var3);
 		else
 			printf("false\n");
-	if (ft_isalpha(var4))
-		printf("%c\n", var4);
+	if (ft_isprint(var4))
+		printf("var4(space) = %c\n", var4);
 		else
 			printf("false\n");
-	printf("#ft_isdigit#\n");
-	if (ft_isdigit(var1))
-		printf("%c\n", var1);
+	if (ft_isprint(var5))
+		printf("var5(!) = %c\n", var5);
 		else
 			printf("false\n");
-	if (ft_isdigit(var2))
-		printf("%c\n", var2);
-		else
-			printf("false\n");
-	if (ft_isdigit(var3))
-		printf("%c\n", var3);
-		else
-			printf("false\n");
-	if (ft_isdigit(var4))
-		printf("%c\n", var4);
-		else
-			printf("false\n");
-		
-	return(0);
+	return (0);
 }
