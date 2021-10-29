@@ -6,7 +6,7 @@
 /*   By: lchristi <lchristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 12:19:54 by lchristi          #+#    #+#             */
-/*   Updated: 2021/10/28 12:24:38 by lchristi         ###   ########.fr       */
+/*   Updated: 2021/10/29 18:18:51 by lchristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 #include "../libft.h"
 #include <stdio.h>
+#include <ctype.h>
 
 int	main()
 {
 	int	var1 = 'a';
-	int	var2 = '-';
+	int	var2 = '2';
 	int	var3 = '\t';
 	int	var4 = ' ';
 	int	var5 = '!';
@@ -27,7 +28,7 @@ int	main()
 		printf("var1(a) = %c\n", var1);
 		else
 			printf("false\n");
-	if (ft_isalnum(var2))
+	if (isalnum(var2))
 		printf("var2(2) = %c\n", var2);
 		else 
 			printf("false\n");

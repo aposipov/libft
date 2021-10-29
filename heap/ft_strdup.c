@@ -6,7 +6,7 @@
 /*   By: lchristi <lchristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 17:10:06 by lchristi          #+#    #+#             */
-/*   Updated: 2021/10/29 21:08:35 by lchristi         ###   ########.fr       */
+/*   Updated: 2021/10/13 12:55:45 by lchristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strdup(const char *s)
 	len = ft_strlen(s);
 	i = 0;
 	str = malloc(len + 1);
-	if (!s || !str)
+	if (!s)
 		return (NULL);
 	while (i < len)
 	{
