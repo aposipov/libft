@@ -1,3 +1,5 @@
+#include "../libft.h"
+
 int main()
 {
 	t_list *empty = NULL;

@@ -6,7 +6,7 @@
 /*   By: lchristi <lchristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 17:25:52 by lchristi          #+#    #+#             */
-/*   Updated: 2021/10/26 20:16:52 by lchristi         ###   ########.fr       */
+/*   Updated: 2021/10/30 11:57:50 by lchristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,13 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	int	i;
+	int	n;
 
-	if (!lst)
-		return (0);
-	i = 0;
+	n = 0;
 	while (lst)
 	{
 		lst = lst->next;
-		i++;
+		n++;
 	}
-	return (i);
+	return (n);
 }
