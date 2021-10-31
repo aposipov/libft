@@ -6,7 +6,7 @@
 #    By: lchristi <lchristi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/11 11:45:35 by lchristi          #+#    #+#              #
-#    Updated: 2021/10/30 11:09:56 by lchristi         ###   ########.fr        #
+#    Updated: 2021/10/31 22:52:14 by lchristi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,17 +43,13 @@ D_FILES = ${patsubst %.c,%.d,${SRC}${SRC_BONUS}}
  
 RM = rm -f
 
-#so:
-#			$(CC) -nostartfiles -fPIC $(FLAGS) $(SRC)
-#			gcc -nostartfiles -shared -o libft.so $(OBJ)
-
 all:		${NAME}
 
 ${NAME}:	${OBJ}
 			ar rcs ${NAME} $?
 
-bonus:		${OBJ} ${OBJ_BONUS}
-			ar rcs ${NAME} $?
+bonus:		
+			make OBJ="${OBJ} ${OBJ_BONUS}" all
 
 %.o : %.c	Makefile ${HEADER}
 			${CC} ${FLAGS} -c $< -o $@ -MD
