@@ -6,7 +6,7 @@
 /*   By: lchristi <lchristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 12:27:52 by lchristi          #+#    #+#             */
-/*   Updated: 2021/10/26 19:30:38 by lchristi         ###   ########.fr       */
+/*   Updated: 2021/11/01 13:16:59 by lchristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	i = 0;
 	if (ft_strlen(s) < start)
-		return (ft_strdup(""));
+		len = 0;
 	if (len > ft_strlen(s) - start)
 		len = ft_strlen(s) - start;
 	str = malloc(len + 1);
