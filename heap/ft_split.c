@@ -6,7 +6,7 @@
 /*   By: lchristi <lchristi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/13 13:46:49 by lchristi          #+#    #+#             */
-/*   Updated: 2021/11/02 13:28:55 by lchristi         ###   ########.fr       */
+/*   Updated: 2021/11/02 13:08:06 by lchristi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,17 +63,19 @@ char	**ft_split(char const *s, char c)
 	array = malloc((ft_count_words(s, c) + 1) * sizeof(char *));
 	if (!array)
 		return (NULL);
+	//while (s[i++] == c)
+	//	start++;
+	//i = -1;
 	array[ft_count_words(s, c)] = NULL;
-	while (i < ft_count_words(s, c))
+	
+	while (++i < ft_count_words(s, c))
 	{
-		while (s[start] == c)
-			start++;
 		array[i] = ft_substr(s, start, ft_strlen_c(&s[start], c));
 		if (!array[i])
 			return (ft_clear(array));
 		start += ft_strlen_c(&s[start], c);
-		i++;
-		start++;
+		while (s[start] == c)
+			start++;
 	}
 	array[i] = NULL;
 	return (array);

@@ -6,7 +6,7 @@
 #    By: lchristi <lchristi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/11 11:45:35 by lchristi          #+#    #+#              #
-#    Updated: 2021/11/01 17:57:15 by lchristi         ###   ########.fr        #
+#    Updated: 2021/11/02 14:05:18 by lchristi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,6 +42,10 @@ OBJ_BONUS = ${patsubst %.c,%.o,${SRC_BONUS}}
 D_FILES = ${patsubst %.c,%.d,${SRC}${SRC_BONUS}} 
  
 RM = rm -f
+
+#so:			
+#			${CC} -nostartfiles -fPIC ${FLAGS} ${SRC} ${SRC_BONUSC}
+#			gcc -nostartfiles -shared -o libft.so ${OBJ} ${OBJ_BONUS}
 
 all:		${NAME}
 
