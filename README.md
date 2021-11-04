@@ -15,4 +15,6 @@ so:
 	${CC} -nostartfiles -shared -o libft.so ${OBJ}
 ```
 
-`make so`
+`make so`  
+
+calloc link https://opensource.apple.com/source/gcc/gcc-5482/libiberty/calloc.c.auto.html
