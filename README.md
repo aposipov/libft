@@ -18,3 +18,9 @@ so:
 `make so`  
 
 calloc link https://opensource.apple.com/source/gcc/gcc-5482/libiberty/calloc.c.auto.html
+
+testers  
+
+https://github.com/Tripouille/libftTester  
+https://github.com/alelievr/libft-unit-test
+https://github.com/ska42/libft-war-machine
